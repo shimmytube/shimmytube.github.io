@@ -1,17 +1,27 @@
-<script src="jquery.min.js"></script>
-<script type="text/javascript">var submitted=false;</script>
-<script type="text/javascript">
-$('#gform').on('submit', function(e) {
-  $('#gform *').fadeOut(2000);
-  $('#gform').prepend('Your submission has been processed...');
-  });
-</script>
-<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1eUp1tNmE0hKGPnr9DFR4rqyb7344cjWeAA0qthJ9qes/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
-  First name:<br>
-  <input type="text" name="entry.366340186" id="entry.366340186"><br>
-  Last name:<br>
-  <input type="text" name="entry.2006794260" id="entry.2006794260">
-  <input type="submit" value="Submit">
-</form>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Works!</h1>
+    <p>Now here is the form. Without the iframe from google, we can style it how we like. Next: customize the confirmation page so it seems to work inside the page.</p>
+    <p>
+      <script type="text/javascript">var submitted=false;</script>
+      <iframe name="hidden_iframe" id="hidden_iframe"
+      style="display:none;" onload="if(submitted)
+      {window.location='thankyou.html';}">
+      </iframe>
+      
+   <form action="https://docs.google.com/forms/d/1eUp1tNmE0hKGPnr9DFR4rqyb7344cjWeAA0qthJ9qes/formResponse?embedded=true" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        
+     First name:<br>
+    <input type="text" name="entry.366340186" id="entry.366340186"><br>
+    Last name:<br>
+    <input type="text" name="entry.2006794260" id="entry.2006794260">
+    <input type="submit" name="submit" value="Senden" id="ss-submit">
+     
+  </form>
+  </p>
+  </body>
+</html>     
